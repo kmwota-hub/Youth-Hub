@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin - Church Event Hub</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>Admin Panel</h1></header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="events.html">Events</a>
+  <a href="churches.html">Churches</a>
+  <a href="admin.html">Admin</a>
+</nav>
+<div class="container">
+  <h2>Register / Login</h2>
+<div class="login-buttons">
+  <button class="google-btn" onclick="loginGoogle()">Login with Google</button>
+  <button class="email-btn" onclick="loginEmail()">Login with Email</button>
+</div>
+
+  <h2>Upload Event</h2>
+  <form id="eventForm">
+    <input type="text" id="title" placeholder="Event Title" required>
+    <input type="date" id="date" required>
+    <input type="text" id="location" placeholder="Location" required>
+    <textarea id="description" placeholder="Event Description"></textarea>
+    <button type="submit">Submit Event</button>
+  </form>
+</div>
+<footer>@2026 | Powered by Mwotsam</footer>
+
+<script src="app.js"></script>
+<script>
+  document.getElementById("eventForm").addEventListener("submit",async e=>{
+    e.preventDefault();
+    await db.collection("events").add({
+      title:document.getElementById("title").value,
+      date:document.getElementById("date").value,
+      location:document.getElementById("location").value,
+      description:document.getElementById("description").value,
+      createdAt:firebase.firestore.FieldValue.serverTimestamp()
+    });
+    alert("Event submitted!");
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: #f9f9f9;
+}
+
+header {
+  background: linear-gradient(to right, #4CAF50, #2E7D32);
+  color: white; text-align: center; padding: 20px;
+}
+
+nav {
+  background: #388E3C; display: flex; justify-content: center;
+}
+nav a {
+  color: white; padding: 14px 20px; text-decoration: none;
+}
+nav a:hover { background: #2E7D32; }
+
+footer {
+  background: #222; color: #ccc; text-align: center; padding: 10px;
+}
+.container { padding: 20px; }
+.event-card {
+  background: white; padding: 15px; margin: 10px 0; border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* =========================
+   Admin Forms Styling
+   ========================= */
+form {
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+form h2 {
+  margin-bottom: 15px;
+  color: #2E7D32;
+  text-align: center;
+}
+
+form input, form textarea, form button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76,175,80,0.5);
+  outline: none;
+}
+
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+form button {
+  background: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #2E7D32;
+}
+
+/* =========================
+   Admin Login Buttons
+   ========================= */
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.login-buttons button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Google button */
+.login-buttons .google-btn {
+  background: #DB4437;
+  color: white;
+}
+.login-buttons .google-btn:hover {
+  background: #C23321;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(219,68,55,0.4);
+}
+
+/* Email button */
+.login-buttons .email-btn {
+  background: #4285F4;
+  color: white;
+}
+.login-buttons .email-btn:hover {
+  background: #3367D6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(66,133,244,0.4);
+}

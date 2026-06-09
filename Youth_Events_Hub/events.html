@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Events - Church Event Hub</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>Upcoming Events</h1></header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="events.html">Events</a>
+  <a href="churches.html">Churches</a>
+  <a href="admin.html">Admin</a>
+</nav>
+<div class="container" id="eventsList"></div>
+<footer>@2026 | Powered by Mwotsam</footer>
+
+<script src="app.js"></script>
+<script>
+  db.collection("events").orderBy("createdAt","desc").onSnapshot(snapshot=>{
+    const list=document.getElementById("eventsList");
+    list.innerHTML="";
+    snapshot.forEach(doc=>{
+      const e=doc.data();
+      list.innerHTML+=`
+        <div class="event-card">
+          <h3>${e.title}</h3>
+          <p>${e.date} | ${e.location}</p>
+          <p>${e.description}</p>
+        </div>`;
+    });
+  });
+</script>
+</body>
+</html>
